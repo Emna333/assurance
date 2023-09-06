@@ -1,0 +1,224 @@
+<!-- Layout wrapper -->
+
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+
+        <!-- Menu -->
+
+        <app-sidenav></app-sidenav>
+        <!-- / Menu -->
+
+        <!-- Navbar -->
+        <div class="layout-page col-9">
+
+            <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme "
+                id="layout-navbar">
+                <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                    <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                        <i class="bx bx-menu bx-sm"></i>
+                    </a>
+                </div>
+
+                <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <!-- Search -->
+                    <div class="navbar-nav align-items-center">
+                        <div class="nav-item d-flex align-items-center">
+                            <i class="bx bx-search fs-4 lh-0"></i>
+                            <input type="text" class="form-control border-0 shadow-none" placeholder="Search..."
+                                aria-label="Search..." />
+                        </div>
+                    </div>
+                    <!-- /Search -->
+
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <!-- Place this tag where you want the button to render. -->
+                        <li class="nav-item lh-1 me-3">
+                            <a class="github-button"
+                                href="https://github.com/themeselection/sneat-html-admin-template-free"
+                                data-icon="octicon-star" data-size="large" data-show-count="true"
+                                aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
+                        </li>
+
+                        <!-- User -->
+                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                data-bs-toggle="dropdown">
+                                <div class="avatar avatar-online">
+                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0 me-3">
+                                                <div class="avatar avatar-online">
+                                                    <img src="../assets/img/avatars/1.png" alt
+                                                        class="w-px-40 h-auto rounded-circle" />
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <span class="fw-semibold d-block">John Doe</span>
+                                                <small class="text-muted">Admin</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bx bx-user me-2"></i>
+                                        <span class="align-middle">My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="bx bx-cog me-2"></i>
+                                        <span class="align-middle">Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <span class="d-flex align-items-center align-middle">
+                                            <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                                            <span class="flex-grow-1 align-middle">Billing</span>
+                                            <span
+                                                class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="auth-login-basic.html">
+                                        <i class="bx bx-power-off me-2"></i>
+                                        <span class="align-middle">Log Out</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--/ User -->
+                    </ul>
+                </div>
+            </nav>
+
+            <!--/ Navbar -->
+
+            <!-- Content -->
+
+            <div class="content-wrapper card custom-class2 col-md-9">
+                <div class="authentication-wrapper authentication-basic  ">
+                    <!-- Register -->
+                    <!-- Logo -->
+                    <div class="app-brand justify-content-center">
+                        <a href="index.html" class="app-brand-link gap-2">
+                        </a>
+                    </div>
+                    <!-- /Logo -->
+
+
+
+                    <form [formGroup]="signupForm" class="mb-2" method="POST">
+
+                        <div class="">
+                            <div class="form-group" style="visibility: hidden;">
+                                <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+
+                            </div>
+                            <img class='img-custom' [src]="imagePreview">
+
+                            <div class="text-center">
+                                <button class="btn btn-primary d-grid w-30" style="font-style: oblique;"
+                                    (click)="filePicker.click()">
+                                    Upload </button>
+                                <br>
+                                <button class="btn btn-outline-success"
+                                    style="font-style: oblique; margin-left: -225px;">
+                                    remove </button>
+
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Nom</label>
+                            <input type="text" formControlName='nom' class="form-control" name="email-username"
+                                autofocus />
+                            <div style="color: red;" *ngIf="signupForm.controls['nom'].invalid &&
+                                        (signupForm.controls['nom'].touched )">
+                                <div *ngIf="signupForm.controls['nom'].errors.required">
+                                    Champ Obligatoire </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="mb-3 form-password-toggle">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label">Email</label>
+
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input type="email" formControlName='email' class="form-control"
+                                    aria-describedby="password" />
+
+                            </div>
+                            <div class="col-md-6" style="color: red;">
+
+
+                                <div *ngIf="signupForm.controls['email'].invalid &&
+                (signupForm.controls['email'].touched || signupForm.controls['email'].dirty)">
+                                    <div *ngIf="signupForm.controls['email'].errors.required">
+                                        Champ Obligatoire </div>
+                                    <div *ngIf="signupForm.controls['email'].errors.email">
+                                        Format d'Email invalide </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Téléphone </label>
+                            <input type="text" formControlName='phone' class="form-control" autofocus />
+                            <div style="color: red;" *ngIf="signupForm.controls['phone'].invalid &&
+                (signupForm.controls['phone'].touched || signupForm.controls['phone'].dirty)">
+                                <div *ngIf="signupForm.controls['phone'].errors.required">
+                                    Champ Obligatoire </div>
+                                <div *ngIf="signupForm.controls['phone'].errors.minlength">
+                                    Le numéro de Téléphone doit contenir au moins 8 chiffres </div>
+
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Role </label>
+                            <br>
+                            <div>
+                                <select class="custom-class" formControlName='role' matNativeControl required>
+                                    <option value="volvo">Gestionnaire Star</option>
+                                    <option value="volvo">Gestionnaire DaryDar</option>
+                                    <option value="saab">Admin</option>
+                                </select>
+                            </div>
+                            <div style="color: red;" *ngIf="signupForm.controls['role'].invalid &&
+                                        (signupForm.controls['role'].touched )">
+                                <div *ngIf="signupForm.controls['role'].errors.required">
+                                    Champ Obligatoire </div>
+
+
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary d-grid w-100" type="submit" (click)="signup()"
+                                [disabled]="signupForm.invalid">Ajouter</button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+            <!-- /Register -->
+        </div>
+    </div>
+</div>
+

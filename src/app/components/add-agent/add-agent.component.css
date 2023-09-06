@@ -1,0 +1,28 @@
+.custom-class {
+    height: 30px;
+    width: 320px;
+
+  }
+
+  .custom-class2 {
+    height: 90%;
+    width: 95%;
+margin-left: 30px;
+margin-top: 30px;
+  }
+/* Media query for mobile screens */
+@media screen and (max-width: 700px) {
+  .custom-class2 {
+    width: 95%; /* Full width for mobile screens */
+    margin: 10px; 
+  }
+  .mb-2{
+    margin-top:-150px;
+  }
+  }
+
+  .img-custom {
+    width:70px;
+    border-radius: 50%;
+    margin-left: 200px;
+  }

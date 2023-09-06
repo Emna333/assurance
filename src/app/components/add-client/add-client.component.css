@@ -1,0 +1,46 @@
+.custom-class2 {
+    height:90%;
+    width: 95%;
+margin-left: 30px;
+margin-top: 30px;
+  }
+
+  .custom-card{
+    height: 70%;
+    width: 400px;
+    background-color: rgb(249, 255, 245);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px;
+    margin-top: -20px;
+  }
+  .custom-card2{
+    height: 70%;
+    width: 400px;
+    padding: 30px;
+    border-radius: 5px;
+
+  }
+ 
+
+
+
+  /* Media query for mobile screens */
+@media screen and (max-width: 700px) {
+    .custom-class2 {
+      width: 95%; /* Full width for mobile screens */
+      margin: 10px; 
+    }
+   
+   }
+@media screen and (max-width: 800px) {
+    .custom-card2{
+       display: none;
+    
+      }
+
+  
+    }
+  
+  
+  
